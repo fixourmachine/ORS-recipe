@@ -1,16 +1,18 @@
 # ORS Recipes
 
-A compact, offline-ready web app for scaling oral rehydration solution recipes to the volume you need.
+A compact, offline-ready calculator for scaling and adapting oral rehydration solution recipes using the ingredients and volume you have.
+
+**[Open ORS Recipes](https://fixourmachine.github.io/ORS-recipe/)**
 
 ## Features
 
 - Works offline after the first successful load
 - Installable as a lightweight app
-- Scale recipes from 50 mL to 5 L
+- Scales recipes from 50 mL to 5 L
 - Weight or spoon measurements where supported
 - Composition displayed in mmol/L
 - Shareable recipe URLs
-- Printable one-page recipes
+- Clean printable recipes
 - Locally saved custom recipes
 - Versioned recipe updates
 
@@ -18,22 +20,20 @@ A compact, offline-ready web app for scaling oral rehydration solution recipes t
 
 - St Mark’s solution
 - WHO reduced-osmolarity ORS
-- Dioralyte
-- Dioralyte at 8 or 10 sachets per litre
-- Dioralyte Relief
-- Clinova O.R.S Hydration Tablets
-- Pedialyte reference composition
-- Pocari Sweat-style glucose recipe
+- Home-made "Dioralyte" style drink
+- Home-made "O.R.S. tablet" style drink
+- Home-made "Pedialyte" style drink
+- Home-made "Pocari Sweat" style glucose drink
 
-Supported substitutions include:
+Supported ingredient choices include:
 
-- Sodium bicarbonate and source-supported trisodium citrate dihydrate variants
+- Sodium bicarbonate and source-supported trisodium citrate dihydrate variants, as availability varies across geographies
 - Anhydrous glucose and glucose monohydrate
-- Potassium chloride and LoSalt Original, with table salt adjusted automatically
+- Potassium chloride and LoSalt Original, with table salt adjusted automatically, for people who can't access potassium chloride
 
 ## Install
 
-Open the app in a supported browser and select **Install app**.
+Open the app and select **Install app** when your browser offers it.
 
 On iPhone or iPad, open it in Safari and choose **Share → Add to Home Screen**.
 
@@ -41,15 +41,15 @@ Load the app successfully once before relying on it without a connection.
 
 ## Sharing and printing
 
-The current recipe, volume and ingredient choices are encoded in the URL. Use **Share** to send the recipe or save it as a bookmark.
+The selected recipe, volume and ingredient choices are encoded in the URL. Use **Share** to send a recipe or save it as a bookmark.
 
-Use **Print** to create a clean paper copy or save the recipe as a PDF.
+Use **Print** to make a clean paper copy or save the recipe as a PDF.
 
 ## Privacy
 
 The app has no analytics, advertising, accounts or upload service. Recipes and preferences are stored locally in the browser.
 
-Shared links intentionally contain the selected recipe data in the URL. Anyone receiving such a link can read that recipe.
+Shared links intentionally contain the selected recipe data in the URL. Anyone receiving a shared link can read that recipe.
 
 ## Running locally
 
@@ -73,8 +73,8 @@ npm run test:updates
 
 These checks cover calculations, substitutions, sharing, printing, responsive layouts, recipe updates and offline operation.
 
-## Sources
+## Sources and calculation notes
 
 Formulae include links to their primary references, including BIFA, NHS Specialist Pharmacy Service, WHO, electronic Medicines Compendium, Guy’s and St Thomas’, Abbott and Otsuka.
 
-The app keeps published product composition separate from calculated raw-ingredient composition. Unknown pH values remain unreported, and osmotic values are labelled as reported, declared or calculated.
+Published product composition is kept separate from calculated raw-ingredient composition. Unknown pH values remain unreported, and osmotic values are identified as reported, declared or calculated.

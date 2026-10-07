@@ -1,0 +1,533 @@
+{
+  "schemaVersion": 3,
+  "version": "1.3.0",
+  "reviewed": "2026-10-07",
+  "changelog": [
+    "Added Dioralyte 8 sachets/L and Clinova 16 tablets/L specialist regimens, dual sourced St Mark’s citrate options, a glucose-only Pocari Sweat-style home recreation, shareable URL state, print layout, composition profiles and explicit osmotic provenance."
+  ],
+  "recipes": [
+    {
+      "id": "st-marks",
+      "name": "St Mark’s solution",
+      "version": "1.2.0",
+      "description": "Bicarbonate formulation · potassium-free",
+      "ingredients": [
+        {
+          "id": "glucose0",
+          "amount": 20
+        },
+        {
+          "id": "bicarb",
+          "amount": 2.5
+        },
+        {
+          "id": "nacl",
+          "amount": 3.5
+        }
+      ],
+      "spoons": {
+        "glucose0": {
+          "count": 6,
+          "size": 5
+        },
+        "bicarb": {
+          "count": 1,
+          "size": 2.5,
+          "heaped": true
+        },
+        "nacl": {
+          "count": 1,
+          "size": 5
+        }
+      },
+      "method": "Dissolve the weighed ingredients in the displayed volume of cold drinking water. The source specifies water added, not a measured final volume.",
+      "storage": "Prepare fresh each day. Discard after 24 hours.",
+      "basis": "Calculated assuming pure anhydrous glucose and the exact salts shown. The source specifies ingredients added to 1 L water, so powder displacement is not modelled. The 285 mOsm/kg value is BIFA’s reported osmolality for the bicarbonate formulation.",
+      "warning": "Use the formulation and volume advised by your clinical team. Table sugar and LoSalt are not substitutes in this potassium-free recipe.",
+      "sources": [
+        {
+          "title": "BIFA/BAPEN · ORS for high-output stomas and fistulas · May 2025",
+          "url": "https://www.bapen.org.uk/pdfs/bifa/bifa-top-tips-series-30.pdf"
+        },
+        {
+          "title": "NHS SPS · St Mark’s solution",
+          "url": "https://sps.nhs.uk/articles/using-st-marks-electrolyte-solution/"
+        }
+      ],
+      "compositionMode": "calculated",
+      "volumeBasis": "water",
+      "category": "High-output formula",
+      "group": "High-output / intestinal failure",
+      "carbohydrateForm": "Free glucose",
+      "baseOptions": {
+        "bicarb": {
+          "ingredient": "bicarb",
+          "amount": 2.5,
+          "label": "Sodium bicarbonate · 2.5 g/L",
+          "note": "BIFA 2025 and NHS SPS bicarbonate formulation."
+        },
+        "citrate-bifa": {
+          "ingredient": "citrate2",
+          "amount": 2.9,
+          "label": "Trisodium citrate dihydrate · 2.9 g/L · BIFA",
+          "note": "BIFA May 2025 sodium-equivalent citrate formulation; calculated sodium is approximately 89.5 mmol/L."
+        },
+        "citrate-sps": {
+          "ingredient": "citrate2",
+          "amount": 2.5,
+          "label": "Trisodium citrate dihydrate · 2.5 g/L · NHS SPS",
+          "note": "NHS SPS same-mass citrate substitution; calculated sodium is approximately 85.4 mmol/L."
+        }
+      },
+      "defaultBase": "bicarb",
+      "osmotic": {
+        "value": 285,
+        "unit": "mOsm/kg",
+        "kind": "Reported osmolality"
+      },
+      "osmoticAppliesToBase": "bicarb"
+    },
+    {
+      "id": "who",
+      "name": "WHO ORS",
+      "version": "1.2.0",
+      "description": "Reduced-osmolarity formulation · 245 mOsm/L target",
+      "ingredients": [
+        {
+          "id": "glucose0",
+          "amount": 13.5
+        },
+        {
+          "id": "nacl",
+          "amount": 2.6
+        },
+        {
+          "id": "kcl",
+          "amount": 1.5
+        },
+        {
+          "id": "citrate2",
+          "amount": 2.9
+        }
+      ],
+      "published": {
+        "sodium": 75,
+        "potassium": 20,
+        "chloride": 65,
+        "glucose": 75,
+        "citrate": 10,
+        "bicarbonate": 0,
+        "sucrose": 0
+      },
+      "method": "Use the exact ingredient forms shown. Dissolve in drinking water and make up to the displayed final volume.",
+      "storage": "Prepare fresh and use within 24 hours.",
+      "basis": "Calculated from WHO ingredient masses. Rounded WHO targets: Na 75, K 20, Cl 65, glucose 75 and citrate 10 mmol/L; osmolarity 245 mOsm/L. Small differences reflect rounding.",
+      "warning": "This is the current reduced-osmolarity WHO formulation, not the older 90 mmol/L sodium recipe. It contains potassium.",
+      "sources": [
+        {
+          "title": "WHO · Oral rehydration salts",
+          "url": "https://www.who.int/publications/i/item/WHO-FCH-CAH-06.1"
+        },
+        {
+          "title": "WHO · formulation specification",
+          "url": "https://iris.who.int/bitstream/handle/10665/44287/WHO_TRS_958_eng.pdf"
+        },
+        {
+          "title": "Quality-assured ORS product specification",
+          "url": "https://www.ghsupplychain.org/sites/default/files/2019-02/MNCH%20Commodities-OralRehydration.pdf"
+        }
+      ],
+      "compositionMode": "calculated",
+      "volumeBasis": "final",
+      "category": "Acute-diarrhoea ORS",
+      "group": "Acute diarrhoea",
+      "carbohydrateForm": "Free glucose",
+      "baseOptions": {
+        "citrate-who": {
+          "ingredient": "citrate2",
+          "amount": 2.9,
+          "label": "Trisodium citrate dihydrate · 2.9 g/L",
+          "note": "Current WHO reduced-osmolarity citrate formulation."
+        },
+        "bicarb": {
+          "ingredient": "bicarb",
+          "amount": 2.5,
+          "label": "Sodium bicarbonate · 2.5 g/L",
+          "note": "WHO-listed immediate-use substitution; bicarbonate/glucose dry mixtures are less stable in heat and humidity."
+        }
+      },
+      "defaultBase": "citrate-who",
+      "osmotic": {
+        "value": 245,
+        "unit": "mOsm/L",
+        "kind": "Declared osmolarity"
+      }
+    },
+    {
+      "id": "dioralyte",
+      "name": "Dioralyte",
+      "version": "1.1.0",
+      "description": "Standard strength · composition reference",
+      "ingredients": [
+        {
+          "id": "productGlucose",
+          "amount": 17.8
+        },
+        {
+          "id": "nacl",
+          "amount": 2.35
+        },
+        {
+          "id": "kcl",
+          "amount": 1.5
+        },
+        {
+          "id": "productCitrate",
+          "amount": 2.65
+        }
+      ],
+      "published": {
+        "sodium": 60,
+        "potassium": 20,
+        "chloride": 60,
+        "glucose": 90,
+        "citrate": 10,
+        "bicarbonate": 0,
+        "sucrose": 0
+      },
+      "method": "Reference masses scale the product specification of one sachet per 200 mL water. They are not a validated home-compounding method. For the licensed product follow the sachet instructions.",
+      "storage": "Licensed product: use promptly; discard after 1 hour at room temperature or 24 hours refrigerated. This does not validate storage of a homemade copy.",
+      "basis": "Composition shown is the published commercial-product reference, not a calculated guarantee for these raw powders. The SmPC does not resolve glucose/citrate hydration forms. Excipients are excluded.",
+      "warning": "Reference only: a homemade copy has not been shown equivalent to Dioralyte. Generic sodium citrate cannot replace disodium hydrogen citrate.",
+      "sources": [
+        {
+          "title": "Dioralyte Citrus · UK SmPC",
+          "url": "https://www.medicines.org.uk/emc/product/2770/smpc"
+        },
+        {
+          "title": "NICE · published ORS compositions",
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK63837/"
+        }
+      ],
+      "compositionMode": "published",
+      "volumeBasis": "water",
+      "waterPerSachet": 200,
+      "category": "Acute-diarrhoea product",
+      "group": "Acute diarrhoea",
+      "carbohydrateForm": "Product glucose",
+      "osmotic": {
+        "value": 240,
+        "unit": "mOsm/L",
+        "kind": "Published reference osmolarity"
+      }
+    },
+    {
+      "id": "dioralyte-8",
+      "name": "Dioralyte · 8 sachets/L",
+      "version": "1.0.0",
+      "description": "Specialist high-output regimen · eight sachets per litre",
+      "category": "High-output product regimen",
+      "group": "High-output / intestinal failure",
+      "carbohydrateForm": "Product glucose",
+      "ingredients": [
+        {
+          "id": "productGlucose",
+          "amount": 28.48
+        },
+        {
+          "id": "nacl",
+          "amount": 3.76
+        },
+        {
+          "id": "kcl",
+          "amount": 2.4
+        },
+        {
+          "id": "productCitrate",
+          "amount": 4.24
+        }
+      ],
+      "published": {
+        "sodium": 96,
+        "potassium": 32,
+        "chloride": 96,
+        "glucose": 144,
+        "citrate": 16,
+        "bicarbonate": 0,
+        "sucrose": 0
+      },
+      "osmotic": {
+        "value": 384,
+        "unit": "mOsm/L",
+        "kind": "Calculated concentration estimate"
+      },
+      "method": "Specialist product regimen: dissolve 8 whole Dioralyte sachets in 1 litre of water (1 sachet per 125 mL). Listed raw ingredient masses are product-specification references, not a validated home copy.",
+      "storage": "Prepare fresh each day and follow the storage instructions supplied by your clinical team.",
+      "basis": "Eight times the licensed sachet composition in 1 L water. Electrolyte and glucose values are scaled from the published standard product. The osmolarity is a proportional estimate, not a measured value.",
+      "warning": "This intentionally uses a stronger dilution than the licensed pack instructions. It contains approximately 32 mmol/L potassium.",
+      "sources": [
+        {
+          "title": "BIFA/BAPEN · ORS for high-output stomas and fistulas · May 2025",
+          "url": "https://www.bapen.org.uk/pdfs/bifa/bifa-top-tips-series-30.pdf"
+        },
+        {
+          "title": "Guy’s and St Thomas’ · oral rehydration salts",
+          "url": "https://www.guysandstthomas.nhs.uk/health-information/oral-rehydration-salts"
+        },
+        {
+          "title": "Dioralyte Citrus · UK SmPC",
+          "url": "https://www.medicines.org.uk/emc/product/2770/smpc"
+        }
+      ],
+      "compositionMode": "published",
+      "volumeBasis": "water",
+      "waterPerSachet": 125
+    },
+    {
+      "id": "dioralyte-double",
+      "name": "Dioralyte double-strength",
+      "version": "1.1.0",
+      "description": "Specialist formulation · twice standard concentration",
+      "ingredients": [
+        {
+          "id": "productGlucose",
+          "amount": 35.6
+        },
+        {
+          "id": "nacl",
+          "amount": 4.7
+        },
+        {
+          "id": "kcl",
+          "amount": 3
+        },
+        {
+          "id": "productCitrate",
+          "amount": 5.3
+        }
+      ],
+      "published": {
+        "sodium": 120,
+        "potassium": 40,
+        "chloride": 120,
+        "glucose": 180,
+        "citrate": 20,
+        "bicarbonate": 0,
+        "sucrose": 0
+      },
+      "method": "Specialist product regimen: 10 whole sachets in 1 litre of water (1 sachet per 100 mL). Do not split dry sachets. Listed raw ingredient masses are a reference, not a validated copy.",
+      "storage": "Use your clinical team’s preparation and storage instructions.",
+      "basis": "Twice the published standard-strength commercial composition. Osmolarity is a nominal doubled estimate, not a measured value. Raw-powder hydration forms and excipients remain unresolved.",
+      "warning": "Double strength is off-label specialist use. Contains 40 mmol/L potassium; use only on specific clinical advice, with appropriate monitoring.",
+      "sources": [
+        {
+          "title": "BIFA/BAPEN · ORS for high-output stomas and fistulas · May 2025",
+          "url": "https://www.bapen.org.uk/pdfs/bifa/bifa-top-tips-series-30.pdf"
+        },
+        {
+          "title": "Dioralyte Citrus · UK SmPC",
+          "url": "https://www.medicines.org.uk/emc/product/2770/smpc"
+        },
+        {
+          "title": "NICE · published ORS compositions",
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK63837/"
+        },
+        {
+          "title": "UCLH · specialist double-strength preparation",
+          "url": "https://www.uclh.nhs.uk/patients-and-visitors/patient-information-pages/oral-rehydration-salts"
+        }
+      ],
+      "compositionMode": "published",
+      "volumeBasis": "water",
+      "waterPerSachet": 100,
+      "category": "High-output product regimen",
+      "group": "High-output / intestinal failure",
+      "carbohydrateForm": "Product glucose",
+      "osmotic": {
+        "value": 480,
+        "unit": "mOsm/L",
+        "kind": "Calculated concentration estimate"
+      }
+    },
+    {
+      "id": "dioralyte-relief",
+      "name": "Dioralyte Relief",
+      "version": "1.0.0",
+      "description": "UK Blackcurrant · pre-cooked rice formulation",
+      "compositionMode": "published",
+      "volumeBasis": "water",
+      "waterPerSachet": 200,
+      "ingredients": [
+        {
+          "id": "rice",
+          "amount": 30
+        },
+        {
+          "id": "reliefCitrate",
+          "amount": 2.9
+        },
+        {
+          "id": "nacl",
+          "amount": 1.75
+        },
+        {
+          "id": "kcl",
+          "amount": 1.5
+        }
+      ],
+      "published": {
+        "sodium": 60,
+        "potassium": 20,
+        "chloride": 50,
+        "citrate": 10
+      },
+      "method": "Commercial product: mix one whole sachet with 200 mL drinking water until milky. Scaled raw masses are composition references, not a verified home recipe.",
+      "storage": "Use within 1 hour, or within 24 hours if refrigerated.",
+      "basis": "SmPC: each sachet contains 6 g pre-cooked rice, 580 mg sodium citrate, 350 mg sodium chloride and 300 mg potassium chloride. Displayed electrolyte and osmolarity values are the product’s published profile. Rice contributes starch and protein; its free glucose and polymer distribution are not specified.",
+      "warning": "Relief is a separate rice-based formula, not standard Dioralyte with starch added. Raw powder copies and substitutions are unvalidated.",
+      "sources": [
+        {
+          "title": "Dioralyte Relief Blackcurrant · UK SmPC",
+          "url": "https://www.medicines.org.uk/emc/product/2858/smpc"
+        }
+      ],
+      "category": "Acute-diarrhoea product",
+      "group": "Acute diarrhoea",
+      "carbohydrateForm": "Pre-cooked rice polymer",
+      "osmotic": {
+        "value": 140,
+        "unit": "mOsm/L",
+        "kind": "Published product osmolarity"
+      }
+    },
+    {
+      "id": "pedialyte",
+      "name": "Pedialyte · unflavoured",
+      "version": "1.0.0",
+      "description": "US oral electrolyte solution · 59 mL presentation",
+      "compositionMode": "published",
+      "volumeBasis": "ready",
+      "ingredients": [
+        {
+          "id": "pedialyte",
+          "amount": 1000
+        }
+      ],
+      "published": {
+        "sodium": 47.45762711864407,
+        "potassium": 20.338983050847457,
+        "chloride": 35.59322033898305,
+        "zinc": 0.1296203161698752
+      },
+      "carbohydrateGL": 20.338983050847457,
+      "method": "Measure the displayed volume of the ready-to-use product. Do not add water. Individual salt masses are not disclosed, so a home-copy recipe cannot be established from this label.",
+      "storage": "For this 59 mL presentation, discard after use; follow the package instructions.",
+      "basis": "Abbott US unflavoured 59 mL label: sodium 2.8 mEq, potassium 1.2 mEq, chloride 2.1 mEq, zinc 0.50 mg and carbohydrate 1.2 g. Values are scaled to one litre; monovalent mEq equals mmol. Dextrose is listed as 1 g per bottle without a hydration basis; glucose mmol/L, citrate and numerical osmolarity are not established here.",
+      "warning": "Product reference, not a homemade recipe. Other Pedialyte products and regional versions differ; check the exact label.",
+      "sources": [
+        {
+          "title": "Abbott · Pedialyte oral electrolyte solution (US 59 mL)",
+          "url": "https://www.abbottnutrition.com/our-products/pedialyte-oral-electrolyte-solution"
+        }
+      ],
+      "category": "Commercial product reference",
+      "group": "Comparators & recreations",
+      "carbohydrateForm": "Product carbohydrate · glucose amount unverified"
+    },
+    {
+      "id": "clinova-16",
+      "name": "Clinova O.R.S · 16 tablets/L",
+      "version": "1.0.0",
+      "description": "Specialist high-output regimen · sixteen tablets per litre",
+      "category": "High-output product regimen",
+      "group": "High-output / intestinal failure",
+      "carbohydrateForm": "Product glucose",
+      "ingredients": [
+        {
+          "id": "clinova",
+          "amount": 16
+        }
+      ],
+      "published": {
+        "sodium": 96,
+        "potassium": 40,
+        "glucose": 146
+      },
+      "method": "Dissolve 16 whole Clinova O.R.S hydration tablets in 1 litre of tap water.",
+      "storage": "Prepare a fresh solution each day.",
+      "basis": "BIFA publishes the approximate composition of the 16-tablet regimen as sodium 96, potassium 40 and glucose 146 mmol/L. Individual ion and osmotic values not stated by that source remain blank.",
+      "warning": "This is the specialist 16-tablet-per-litre regimen described by BIFA and Guy’s and St Thomas’, not the manufacturer’s ordinary hydration dilution.",
+      "sources": [
+        {
+          "title": "BIFA/BAPEN · ORS for high-output stomas and fistulas · May 2025",
+          "url": "https://www.bapen.org.uk/pdfs/bifa/bifa-top-tips-series-30.pdf"
+        },
+        {
+          "title": "Guy’s and St Thomas’ · oral rehydration salts",
+          "url": "https://www.guysandstthomas.nhs.uk/health-information/oral-rehydration-salts"
+        }
+      ],
+      "compositionMode": "published",
+      "volumeBasis": "water",
+      "wholeUnit": {
+        "ingredient": "clinova",
+        "volumePerUnit": 62.5,
+        "singular": "tablet",
+        "plural": "tablets"
+      }
+    },
+    {
+      "id": "pocari",
+      "name": "Pocari Sweat-style · glucose recipe",
+      "version": "1.1.0",
+      "description": "Home recreation · label electrolyte targets with glucose only",
+      "category": "Home recreation",
+      "group": "Comparators & recreations",
+      "carbohydrateForm": "Glucose only",
+      "ingredients": [
+        {
+          "id": "glucose0",
+          "amount": 65
+        },
+        {
+          "id": "nacl",
+          "amount": 0.64287047
+        },
+        {
+          "id": "kcl",
+          "amount": 0.3727565
+        },
+        {
+          "id": "citrate2",
+          "amount": 0.98033333
+        },
+        {
+          "id": "calciumLactate5",
+          "amount": 0.15415
+        },
+        {
+          "id": "magnesiumCarbonate",
+          "amount": 0.02107825
+        }
+      ],
+      "osmotic": {
+        "value": 408.12,
+        "unit": "mOsm/L",
+        "kind": "Calculated ideal osmolarity"
+      },
+      "carbohydrateGL": 65,
+      "method": "Weigh the exact chemical forms shown and dissolve them in the displayed volume of drinking water. This reconstruction uses glucose as the only carbohydrate.",
+      "storage": "Prepare fresh. Storage stability and microbiological shelf life have not been established for this home reconstruction.",
+      "basis": "The electrolyte masses solve the Japanese powder label targets: Na 21, K 5, Cl 16, Ca 0.5, Mg 0.25, citrate 3.333 and lactate 1 mmol/L. Sodium chloride supplies 11 mmol sodium/chloride; potassium chloride supplies 5 mmol potassium/chloride; trisodium citrate dihydrate supplies 10 mmol sodium and 3.333 mmol citrate; calcium lactate pentahydrate supplies 0.5 mmol calcium and 1 mmol lactate. Glucose is set to the label’s 65 g/L total carbohydrate, so this is not osmotically or organoleptically equivalent to the mixed-sugar commercial powder.",
+      "warning": "This is a transparent home reconstruction of the published electrolyte targets, not the commercial product. Exact salt hydration forms matter; 21 mg magnesium carbonate per litre requires a suitable milligram scale.",
+      "sources": [
+        {
+          "title": "Otsuka · Pocari Sweat, Japanese 1 L powder",
+          "url": "https://www.otsuka.co.jp/en/nutraceutical/products/pocarisweat/"
+        }
+      ],
+      "compositionMode": "calculated",
+      "volumeBasis": "water"
+    }
+  ]
+}

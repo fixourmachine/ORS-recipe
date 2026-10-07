@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "version": "1.0.0",
+  "reviewed": "2026-10-05",
+  "changelog": [
+    "Initial source-linked recipe pack; independent clinical review pending."
+  ],
+  "recipes": [
+    {
+      "id": "st-marks",
+      "name": "St Mark’s solution",
+      "version": "1.0.0",
+      "description": "Bicarbonate formulation · potassium-free",
+      "ingredients": [
+        {
+          "id": "glucose0",
+          "amount": 20
+        },
+        {
+          "id": "bicarb",
+          "amount": 2.5
+        },
+        {
+          "id": "nacl",
+          "amount": 3.5
+        }
+      ],
+      "spoons": {
+        "glucose0": {
+          "count": 6,
+          "size": 5
+        },
+        "bicarb": {
+          "count": 1,
+          "size": 2.5,
+          "heaped": true
+        },
+        "nacl": {
+          "count": 1,
+          "size": 5
+        }
+      },
+      "method": "Dissolve the weighed ingredients in the displayed volume of cold drinking water. The source specifies water added, not a measured final volume.",
+      "storage": "Prepare fresh each day. Discard after 24 hours.",
+      "basis": "Calculated assuming pure anhydrous glucose and pure salts. Nominal concentrations use the source water volume; powder displacement is not modelled. Sodium is approximately 90 mmol/L.",
+      "warning": "Use the formulation and volume advised by your clinical team. Table sugar and LoSalt are not substitutes in this potassium-free recipe.",
+      "sources": [
+        {
+          "title": "NHS SPS · St Mark’s solution",
+          "url": "https://www.sps.nhs.uk/articles/using-st-marks-electrolyte-solution/"
+        }
+      ]
+    },
+    {
+      "id": "st-marks-citrate",
+      "name": "St Mark’s · citrate variant",
+      "version": "1.0.0",
+      "description": "2.5 g citrate variant · dihydrate assumption",
+      "ingredients": [
+        {
+          "id": "glucose0",
+          "amount": 20
+        },
+        {
+          "id": "citrate2",
+          "amount": 2.5
+        },
+        {
+          "id": "nacl",
+          "amount": 3.5
+        }
+      ],
+      "method": "Dissolve the ingredients in the displayed volume of cold drinking water. Confirm the citrate salt and hydration form first.",
+      "storage": "Prepare fresh each day. Discard after 24 hours.",
+      "basis": "SPS allows 2.5 g sodium citrate but does not specify hydration. This model explicitly assumes trisodium citrate dihydrate: sodium is about 85.4 mmol/L, not 90. Anhydrous citrate gives a different result.",
+      "warning": "Citrate form must be checked. This variant is an explicit chemical model of the source substitution, not a verified equivalent of bicarbonate St Mark’s.",
+      "sources": [
+        {
+          "title": "NHS SPS · St Mark’s solution",
+          "url": "https://www.sps.nhs.uk/articles/using-st-marks-electrolyte-solution/"
+        }
+      ]
+    },
+    {
+      "id": "who",
+      "name": "WHO ORS",
+      "version": "1.0.0",
+      "description": "Reduced-osmolarity formulation · 245 mOsm/L target",
+      "ingredients": [
+        {
+          "id": "glucose0",
+          "amount": 13.5
+        },
+        {
+          "id": "nacl",
+          "amount": 2.6
+        },
+        {
+          "id": "kcl",
+          "amount": 1.5
+        },
+        {
+          "id": "citrate2",
+          "amount": 2.9
+        }
+      ],
+      "published": {
+        "sodium": 75,
+        "potassium": 20,
+        "chloride": 65,
+        "glucose": 75,
+        "citrate": 10,
+        "bicarbonate": 0,
+        "sucrose": 0,
+        "osmolarity": 245
+      },
+      "method": "Use the exact ingredient forms shown. Dissolve in drinking water and make up to the displayed final volume.",
+      "storage": "Prepare fresh and use within 24 hours.",
+      "basis": "Calculated from WHO ingredient masses. Rounded WHO targets: Na 75, K 20, Cl 65, glucose 75 and citrate 10 mmol/L; osmolarity 245 mOsm/L. Small differences reflect rounding.",
+      "warning": "This is the current reduced-osmolarity WHO formulation, not the older 90 mmol/L sodium recipe. It contains potassium.",
+      "sources": [
+        {
+          "title": "WHO · Oral rehydration salts",
+          "url": "https://www.who.int/publications/i/item/WHO-FCH-CAH-06.1"
+        },
+        {
+          "title": "WHO · formulation specification",
+          "url": "https://iris.who.int/bitstream/handle/10665/44287/WHO_TRS_958_eng.pdf"
+        }
+      ]
+    },
+    {
+      "id": "dioralyte",
+      "name": "Dioralyte copy",
+      "version": "1.0.0",
+      "description": "Standard strength · composition reference",
+      "ingredients": [
+        {
+          "id": "productGlucose",
+          "amount": 17.8
+        },
+        {
+          "id": "nacl",
+          "amount": 2.35
+        },
+        {
+          "id": "kcl",
+          "amount": 1.5
+        },
+        {
+          "id": "productCitrate",
+          "amount": 2.65
+        }
+      ],
+      "published": {
+        "sodium": 60,
+        "potassium": 20,
+        "chloride": 60,
+        "glucose": 90,
+        "citrate": 10,
+        "bicarbonate": 0,
+        "sucrose": 0,
+        "osmolarity": 240
+      },
+      "method": "Reference masses scale the product specification of one sachet per 200 mL water. They are not a validated home-compounding method. For the licensed product follow the sachet instructions.",
+      "storage": "Licensed product: use promptly; discard after 1 hour at room temperature or 24 hours refrigerated. This does not validate storage of a homemade copy.",
+      "basis": "Composition shown is the published commercial-product reference, not a calculated guarantee for these raw powders. The SmPC does not resolve glucose/citrate hydration forms. Excipients are excluded.",
+      "warning": "Reference only: a homemade copy has not been shown equivalent to Dioralyte. Generic sodium citrate cannot replace disodium hydrogen citrate.",
+      "sources": [
+        {
+          "title": "Dioralyte Citrus · UK SmPC",
+          "url": "https://www.medicines.org.uk/emc/product/2770/smpc"
+        },
+        {
+          "title": "NICE · published ORS compositions",
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK63837/"
+        }
+      ]
+    },
+    {
+      "id": "dioralyte-double",
+      "name": "Dioralyte double-strength",
+      "version": "1.0.0",
+      "description": "Specialist formulation · twice standard concentration",
+      "ingredients": [
+        {
+          "id": "productGlucose",
+          "amount": 35.6
+        },
+        {
+          "id": "nacl",
+          "amount": 4.7
+        },
+        {
+          "id": "kcl",
+          "amount": 3
+        },
+        {
+          "id": "productCitrate",
+          "amount": 5.3
+        }
+      ],
+      "published": {
+        "sodium": 120,
+        "potassium": 40,
+        "chloride": 120,
+        "glucose": 180,
+        "citrate": 20,
+        "bicarbonate": 0,
+        "sucrose": 0,
+        "osmolarity": 480
+      },
+      "method": "Specialist product regimen: 10 whole sachets in 1 litre of water (1 sachet per 100 mL). Do not split dry sachets. Listed raw ingredient masses are a reference, not a validated copy.",
+      "storage": "Use your clinical team’s preparation and storage instructions.",
+      "basis": "Twice the published standard-strength commercial composition. Osmolarity is a nominal doubled estimate, not a measured value. Raw-powder hydration forms and excipients remain unresolved.",
+      "warning": "Double strength is off-label specialist use. Contains 40 mmol/L potassium; use only on specific clinical advice, with appropriate monitoring.",
+      "sources": [
+        {
+          "title": "Dioralyte Citrus · UK SmPC",
+          "url": "https://www.medicines.org.uk/emc/product/2770/smpc"
+        },
+        {
+          "title": "NICE · published ORS compositions",
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK63837/"
+        },
+        {
+          "title": "UCLH · specialist double-strength preparation",
+          "url": "https://www.uclh.nhs.uk/patients-and-visitors/patient-information-pages/oral-rehydration-salts"
+        }
+      ]
+    }
+  ]
+}
